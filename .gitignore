@@ -1,0 +1,14 @@
+# Backend
+**/data/
+**/.gradle/
+**/.gradle-dist/
+**/build/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS / tooling
+.DS_Store
+Thumbs.db

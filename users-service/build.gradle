@@ -1,0 +1,65 @@
+plugins {
+    id("io.micronaut.application") version "4.4.3"
+    id("io.micronaut.aot") version "4.4.3"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+}
+
+version = "0.1"
+group = "com.users"
+
+repositories {
+    mavenCentral()
+}
+
+def isWindows = System.getProperty("os.name").toLowerCase().contains("windows")
+if (isWindows) {
+    def buildRoot = System.getenv("SPEEDBOATS_BUILD_ROOT") ?: "C:/speedboats-build"
+    buildDir = file("${buildRoot}/${rootProject.name}")
+}
+
+dependencies {
+    annotationProcessor("io.micronaut:micronaut-http-validation")
+    annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-http-server-netty")
+    implementation("io.micronaut.validation:micronaut-validation")
+    implementation("io.micronaut.serde:micronaut-serde-jackson")
+
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    runtimeOnly("org.xerial:sqlite-jdbc:3.46.1.0")
+    runtimeOnly("org.yaml:snakeyaml:2.2")
+
+    runtimeOnly("ch.qos.logback:logback-classic")
+
+    testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+}
+
+application {
+    mainClass = "com.users.Application"
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion("21")
+    targetCompatibility = JavaVersion.toVersion("21")
+}
+
+micronaut {
+    version("4.4.3")
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.users.*")
+    }
+    aot {
+        optimizeServiceLoading = false
+        convertYamlToJava = false
+    }
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}

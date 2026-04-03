@@ -1,0 +1,38 @@
+micronaut:
+  application:
+    name: bookings-service
+  server:
+    port: 8003
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedOrigins:
+            - http://localhost:3000
+            - http://localhost:3001
+            - http://localhost:5173
+          allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+            - OPTIONS
+          allowedHeaders:
+            - Content-Type
+  http:
+    services:
+      tours:
+        url: http://localhost:8001
+      users:
+        url: http://localhost:8002
+
+logger:
+  levels:
+    root: INFO
+    com.bookings: INFO
+
+datasources:
+  default:
+    url: jdbc:sqlite:./data/bookings.sqlite3
+    driverClassName: org.sqlite.JDBC
+    maximumPoolSize: 5

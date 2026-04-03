@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sb-container {
+    @apply mx-auto w-full max-w-5xl px-4;
+  }
+  .sb-card {
+    @apply rounded-xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur;
+  }
+  .sb-title {
+    @apply text-xl font-semibold tracking-tight text-slate-900;
+  }
+  .sb-subtitle {
+    @apply text-sm text-slate-600;
+  }
+  .sb-input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none;
+    @apply focus:border-sky-400 focus:ring-2 focus:ring-sky-200;
+  }
+  .sb-select {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none;
+    @apply focus:border-sky-400 focus:ring-2 focus:ring-sky-200;
+  }
+  .sb-btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium;
+    @apply transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .sb-btn-primary {
+    @apply sb-btn bg-sky-600 text-white hover:bg-sky-700;
+    @apply focus:outline-none focus:ring-2 focus:ring-sky-200;
+  }
+  .sb-btn-secondary {
+    @apply sb-btn border border-slate-300 bg-white text-slate-800 hover:bg-slate-50;
+    @apply focus:outline-none focus:ring-2 focus:ring-slate-200;
+  }
+  .sb-badge {
+    @apply inline-flex items-center rounded-full bg-sky-50 px-2 py-0.5 text-xs font-medium text-sky-700;
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 10% 0%, theme('colors.sky.100'), transparent),
+    radial-gradient(900px 500px at 90% 10%, theme('colors.blue.100'), transparent),
+    theme('colors.slate.50');
+}
