@@ -1,7 +1,22 @@
-# Speedboats
-The project consists of a distributed system using Micronaut microservices for managing community boat tours, where local guides publish tours and users can consult them, implementing small and well-isolated microservices within a monorepo.
+<h1 align="center">Speedboats</h1>
 
-It will execute entirely locally with SQLite and independent executable microservices.
+<p align="center">
+  The project consists of a distributed system using Micronaut microservices for managing community boat tours, where local guides publish tours and users can consult them, implementing small and well-isolated microservices within a monorepo.
+</p>
+
+<p align="center">
+  It will execute entirely locally with SQLite and independent executable microservices.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/JAVA-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21">
+  <img src="https://img.shields.io/badge/MICRONAUT-4-1A1A1A?style=for-the-badge&logo=micronaut&logoColor=white" alt="Micronaut 4">
+  <img src="https://img.shields.io/badge/GRADLE-BUILD-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle">
+  <img src="https://img.shields.io/badge/SQLITE-PER%20SERVICE-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/REACT-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18">
+  <img src="https://img.shields.io/badge/TAILWIND%20CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 3">
+  <img src="https://img.shields.io/badge/VITE-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 5">
+</p>
 
 ## Authors
  * Isaac Villalobos Bonilla, 2024124285
